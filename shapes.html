@@ -1,0 +1,92 @@
+<h1>Choose a shape</h1>
+<p>Disclaimer: Measurement is used in pixels which can make shapes collide if too big, so feel free to use the "Clear Canvas" button.</p>
+
+<canvas id="myCanvas" width="800" height="400" style="border:1px solid #d3d3d3;"></canvas>
+
+<button onclick="myFunction1()">Square</button>
+
+<button onclick="myFunction2()">Triangle</button>
+
+<button onclick="myFunction3()">Circle</button>
+
+<button onclick="myFunction4()">Rhombus</button>
+
+<button onclick="myFunction5()">Clear Canvas</button>
+
+<script>
+
+function myFunction1() {
+
+user_input = prompt("Enter a value of the squares side")
+let canvas = document.getElementById("myCanvas");
+let context = canvas.getContext("2d");
+context.beginPath();
+context.rect(200, 50, user_input, user_input);
+context.stroke();
+}
+
+</script>
+
+<script>
+
+function myFunction2() {
+
+
+    side1 = prompt("Enter the X axis of the bottom side/longest side")
+    
+    side2 = prompt("Enter the X axis of the left side")
+    
+    side3 = prompt("Enter the X axis of the right side")
+    
+   
+
+  let canvas = document.getElementById('myCanvas');
+  let context = canvas.getContext("2d");
+  context.beginPath();
+
+  context.moveTo(side1, 200); 
+  context.lineTo(side2, 100); 
+  context.stroke();
+  context.lineTo(side3, 200); 
+  context.stroke();
+  context.lineTo(side1, 200); 
+  context.stroke();
+  context.closePath();
+
+}
+
+</script>
+
+<script>
+    function myFunction5() {
+        let canvas = document.getElementById("myCanvas");  
+        let context = canvas.getContext("2d");             
+        context.clearRect(0, 0, 800, 400); 
+    }
+</script>
+
+
+
+<script>
+
+    function myFunction3() {
+        let centerX = 800 / 2;
+        let centerY = 400 / 2;
+        let canvas = document.getElementById("myCanvas");
+        let context = canvas.getContext("2d");
+        let radius = prompt("Enter a value for the radius")
+
+        context.beginPath();
+        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+        context.stroke();
+    }
+
+</script>
+
+<script>
+    function myFunction4() {
+    }
+</script>
+
+
+
